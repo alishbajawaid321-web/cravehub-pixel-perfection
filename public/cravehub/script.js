@@ -10,26 +10,26 @@
   var IMG = "/cravehub/img/";
 
   var MENU = [
-    { id: "b1", name: "CraveHub Signature Burger", cat: "burgers", price: 1290, rating: 4.9, reviews: 1240, img: "burger.jpg", tag: "Bestseller", spicy: 1, protein: "beef", desc: "Double flame-grilled beef, aged cheddar, smoked aioli and brioche bun.", kcal: 780 },
-    { id: "b2", name: "Smoky BBQ Beef Stack", cat: "burgers", price: 1150, rating: 4.7, reviews: 860, img: "burger.jpg", tag: "Chef's Pick", spicy: 2, protein: "beef", desc: "Slow-smoked patty, crispy onions and house BBQ glaze.", kcal: 820 },
-    { id: "b3", name: "Garden Crunch Veggie", cat: "burgers", price: 890, rating: 4.6, reviews: 410, img: "burger.jpg", tag: "Healthy", spicy: 0, protein: "veg", desc: "Chickpea-quinoa patty, avocado smash and herbed yogurt.", kcal: 520 },
-    { id: "p1", name: "Molten Pepperoni Pizza", cat: "pizza", price: 1490, rating: 4.8, reviews: 990, img: "pizza.jpg", tag: "Trending", spicy: 1, protein: "beef", desc: "Stone-baked 12\" base, triple cheese and cured pepperoni.", kcal: 940 },
-    { id: "p2", name: "Fiery Tikka Pizza", cat: "pizza", price: 1590, rating: 4.7, reviews: 640, img: "pizza.jpg", tag: "Spicy", spicy: 3, protein: "chicken", desc: "Chargrilled tikka chicken, jalapeño and chilli drizzle.", kcal: 980 },
-    { id: "p3", name: "Garden Margherita", cat: "pizza", price: 1090, rating: 4.5, reviews: 380, img: "pizza.jpg", tag: "Classic", spicy: 0, protein: "veg", desc: "San Marzano tomato, fior di latte and fresh basil.", kcal: 720 },
-    { id: "c1", name: "Golden Crispy Chicken", cat: "chicken", price: 990, rating: 4.9, reviews: 1510, img: "chicken.jpg", tag: "Bestseller", spicy: 1, protein: "chicken", desc: "Six-piece buttermilk-brined chicken with signature crumb.", kcal: 690 },
-    { id: "c2", name: "Nashville Hot Wings", cat: "chicken", price: 850, rating: 4.8, reviews: 720, img: "chicken.jpg", tag: "Spicy", spicy: 3, protein: "chicken", desc: "Eight wings tossed in cayenne-honey heat.", kcal: 610 },
-    { id: "c3", name: "Grilled Herb Chicken", cat: "chicken", price: 1080, rating: 4.6, reviews: 330, img: "chicken.jpg", tag: "Healthy", spicy: 0, protein: "chicken", desc: "Lean grilled breast, lemon-herb rub, side salad.", kcal: 430 },
-    { id: "f1", name: "Loaded Crave Fries", cat: "fries", price: 590, rating: 4.8, reviews: 880, img: "fries.jpg", tag: "Trending", spicy: 1, protein: "veg", desc: "Skin-on fries, molten cheese sauce and smoked spice dust.", kcal: 520 },
-    { id: "f2", name: "Classic Golden Fries", cat: "fries", price: 390, rating: 4.6, reviews: 1200, img: "fries.jpg", tag: "Classic", spicy: 0, protein: "veg", desc: "Double-cooked, sea-salted, endlessly dippable.", kcal: 340 },
-    { id: "f3", name: "Peri Peri Fries", cat: "fries", price: 490, rating: 4.7, reviews: 560, img: "fries.jpg", tag: "Spicy", spicy: 2, protein: "veg", desc: "Fries dusted with African bird's-eye peri peri.", kcal: 380 },
-    { id: "w1", name: "Chargrilled Chicken Wrap", cat: "wraps", price: 790, rating: 4.7, reviews: 620, img: "wrap.jpg", tag: "Bestseller", spicy: 1, protein: "chicken", desc: "Grilled chicken, garlic mayo and crisp greens in a warm tortilla.", kcal: 480 },
-    { id: "w2", name: "Volcano Beef Wrap", cat: "wraps", price: 890, rating: 4.6, reviews: 340, img: "wrap.jpg", tag: "Spicy", spicy: 3, protein: "beef", desc: "Spiced beef strips, chipotle sauce and pickled onion.", kcal: 610 },
-    { id: "w3", name: "Falafel Green Wrap", cat: "wraps", price: 690, rating: 4.5, reviews: 260, img: "wrap.jpg", tag: "Healthy", spicy: 0, protein: "veg", desc: "Baked falafel, hummus, tabbouleh and tahini.", kcal: 420 },
-    { id: "d1", name: "Molten Chocolate Lava", cat: "desserts", price: 590, rating: 4.9, reviews: 940, img: "dessert.jpg", tag: "Chef's Pick", spicy: 0, protein: "veg", desc: "Warm chocolate cake with a flowing berry-cocoa core.", kcal: 460 },
-    { id: "d2", name: "Salted Caramel Sundae", cat: "desserts", price: 450, rating: 4.7, reviews: 510, img: "dessert.jpg", tag: "Sweet", spicy: 0, protein: "veg", desc: "Vanilla soft-serve, caramel ribbon and toasted nuts.", kcal: 390 },
-    { id: "x1", name: "Crave Cola Fizz", cat: "drinks", price: 250, rating: 4.6, reviews: 700, img: "drink.jpg", tag: "Classic", spicy: 0, protein: "veg", desc: "Ice-cold cola over crushed ice with a citrus twist.", kcal: 160 },
-    { id: "x2", name: "Mango Chill Cooler", cat: "drinks", price: 350, rating: 4.8, reviews: 430, img: "drink.jpg", tag: "Healthy", spicy: 0, protein: "veg", desc: "Alphonso mango blended with yogurt and mint.", kcal: 210 },
-    { id: "x3", name: "Iced Cocoa Storm", cat: "drinks", price: 390, rating: 4.7, reviews: 380, img: "drink.jpg", tag: "Trending", spicy: 0, protein: "veg", desc: "Cold-brew cocoa, milk foam and dark chocolate shavings.", kcal: 280 }
+    { id: "b1", name: "CraveHub Signature Burger", cat: "burgers", price: 1290, rating: 4.9, reviews: 1240, img: "menu/b1.jpg", tag: "Bestseller", spicy: 1, protein: "beef", desc: "Double flame-grilled beef, aged cheddar, smoked aioli and brioche bun.", kcal: 780 },
+    { id: "b2", name: "Smoky BBQ Beef Stack", cat: "burgers", price: 1150, rating: 4.7, reviews: 860, img: "menu/b2.jpg", tag: "Chef's Pick", spicy: 2, protein: "beef", desc: "Slow-smoked patty, crispy onions and house BBQ glaze.", kcal: 820 },
+    { id: "b3", name: "Garden Crunch Veggie", cat: "burgers", price: 890, rating: 4.6, reviews: 410, img: "menu/b3.jpg", tag: "Healthy", spicy: 0, protein: "veg", desc: "Chickpea-quinoa patty, avocado smash and herbed yogurt.", kcal: 520 },
+    { id: "p1", name: "Molten Pepperoni Pizza", cat: "pizza", price: 1490, rating: 4.8, reviews: 990, img: "menu/p1.jpg", tag: "Trending", spicy: 1, protein: "beef", desc: "Stone-baked 12\" base, triple cheese and cured pepperoni.", kcal: 940 },
+    { id: "p2", name: "Fiery Tikka Pizza", cat: "pizza", price: 1590, rating: 4.7, reviews: 640, img: "menu/p2.jpg", tag: "Spicy", spicy: 3, protein: "chicken", desc: "Chargrilled tikka chicken, jalapeño and chilli drizzle.", kcal: 980 },
+    { id: "p3", name: "Garden Margherita", cat: "pizza", price: 1090, rating: 4.5, reviews: 380, img: "menu/p3.jpg", tag: "Classic", spicy: 0, protein: "veg", desc: "San Marzano tomato, fior di latte and fresh basil.", kcal: 720 },
+    { id: "c1", name: "Golden Crispy Chicken", cat: "chicken", price: 990, rating: 4.9, reviews: 1510, img: "menu/c1.jpg", tag: "Bestseller", spicy: 1, protein: "chicken", desc: "Six-piece buttermilk-brined chicken with signature crumb.", kcal: 690 },
+    { id: "c2", name: "Nashville Hot Wings", cat: "chicken", price: 850, rating: 4.8, reviews: 720, img: "menu/c2.jpg", tag: "Spicy", spicy: 3, protein: "chicken", desc: "Eight wings tossed in cayenne-honey heat.", kcal: 610 },
+    { id: "c3", name: "Grilled Herb Chicken", cat: "chicken", price: 1080, rating: 4.6, reviews: 330, img: "menu/c3.jpg", tag: "Healthy", spicy: 0, protein: "chicken", desc: "Lean grilled breast, lemon-herb rub, side salad.", kcal: 430 },
+    { id: "f1", name: "Loaded Crave Fries", cat: "fries", price: 590, rating: 4.8, reviews: 880, img: "menu/f1.jpg", tag: "Trending", spicy: 1, protein: "veg", desc: "Skin-on fries, molten cheese sauce and smoked spice dust.", kcal: 520 },
+    { id: "f2", name: "Classic Golden Fries", cat: "fries", price: 390, rating: 4.6, reviews: 1200, img: "menu/f2.jpg", tag: "Classic", spicy: 0, protein: "veg", desc: "Double-cooked, sea-salted, endlessly dippable.", kcal: 340 },
+    { id: "f3", name: "Peri Peri Fries", cat: "fries", price: 490, rating: 4.7, reviews: 560, img: "menu/f3.jpg", tag: "Spicy", spicy: 2, protein: "veg", desc: "Fries dusted with African bird's-eye peri peri.", kcal: 380 },
+    { id: "w1", name: "Chargrilled Chicken Wrap", cat: "wraps", price: 790, rating: 4.7, reviews: 620, img: "menu/w1.jpg", tag: "Bestseller", spicy: 1, protein: "chicken", desc: "Grilled chicken, garlic mayo and crisp greens in a warm tortilla.", kcal: 480 },
+    { id: "w2", name: "Volcano Beef Wrap", cat: "wraps", price: 890, rating: 4.6, reviews: 340, img: "menu/w2.jpg", tag: "Spicy", spicy: 3, protein: "beef", desc: "Spiced beef strips, chipotle sauce and pickled onion.", kcal: 610 },
+    { id: "w3", name: "Falafel Green Wrap", cat: "wraps", price: 690, rating: 4.5, reviews: 260, img: "menu/w3.jpg", tag: "Healthy", spicy: 0, protein: "veg", desc: "Baked falafel, hummus, tabbouleh and tahini.", kcal: 420 },
+    { id: "d1", name: "Molten Chocolate Lava", cat: "desserts", price: 590, rating: 4.9, reviews: 940, img: "menu/d1.jpg", tag: "Chef's Pick", spicy: 0, protein: "veg", desc: "Warm chocolate cake with a flowing berry-cocoa core.", kcal: 460 },
+    { id: "d2", name: "Salted Caramel Sundae", cat: "desserts", price: 450, rating: 4.7, reviews: 510, img: "menu/d2.jpg", tag: "Sweet", spicy: 0, protein: "veg", desc: "Vanilla soft-serve, caramel ribbon and toasted nuts.", kcal: 390 },
+    { id: "x1", name: "Crave Cola Fizz", cat: "drinks", price: 250, rating: 4.6, reviews: 700, img: "menu/x1.jpg", tag: "Classic", spicy: 0, protein: "veg", desc: "Ice-cold cola over crushed ice with a citrus twist.", kcal: 160 },
+    { id: "x2", name: "Mango Chill Cooler", cat: "drinks", price: 350, rating: 4.8, reviews: 430, img: "menu/x2.jpg", tag: "Healthy", spicy: 0, protein: "veg", desc: "Alphonso mango blended with yogurt and mint.", kcal: 210 },
+    { id: "x3", name: "Iced Cocoa Storm", cat: "drinks", price: 390, rating: 4.7, reviews: 380, img: "menu/x3.jpg", tag: "Trending", spicy: 0, protein: "veg", desc: "Cold-brew cocoa, milk foam and dark chocolate shavings.", kcal: 280 }
   ];
 
   var NAV = [
@@ -302,7 +302,7 @@
       '<article class="card food-card reveal" data-cat="' + item.cat + '" data-name="' + esc(item.name.toLowerCase()) + '">' +
         '<div class="food-card__media">' +
           '<span class="chip food-card__tag' + (item.tag === "Spicy" ? " chip--hot" : "") + '">' + item.tag + "</span>" +
-          '<img src="' + IMG + item.img + '" alt="' + esc(item.name) + '" loading="lazy" width="768" height="768">' +
+          '<img src="' + IMG + item.img + '" alt="' + esc(item.name) + '" loading="lazy" decoding="async" width="640" height="640">' +
           '<div class="food-card__quick"><button class="btn btn--glass btn--sm btn--block" data-quick="' + item.id + '">Quick View</button></div>' +
         "</div>" +
         '<div class="food-card__body">' +
@@ -365,7 +365,7 @@
     var box = $("#quick-body");
     function open(item) {
       box.innerHTML =
-        '<img src="' + IMG + item.img + '" alt="' + esc(item.name) + '">' +
+        '<img src="' + IMG + item.img + '" alt="' + esc(item.name) + '" loading="lazy" decoding="async" width="640" height="640">' +
         '<div class="modal__body">' +
           '<span class="chip">' + item.tag + "</span>" +
           "<h3>" + esc(item.name) + "</h3>" +
@@ -448,7 +448,7 @@
       var out = $("#ai-result");
       out.innerHTML =
         '<div class="card result-card glass">' +
-          '<img src="' + IMG + best.item.img + '" alt="' + esc(best.item.name) + '">' +
+          '<img src="' + IMG + best.item.img + '" alt="' + esc(best.item.name) + '" loading="lazy" decoding="async" width="640" height="640">' +
           '<div class="result-card__body">' +
             '<span class="chip">CraveBot match ' + match + "%</span>" +
             "<h3>" + esc(best.item.name) + "</h3>" +
