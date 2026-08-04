@@ -14,6 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/hero.jpg" fetchpriority="high">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -34,7 +35,7 @@
   <!-- ============ HERO ============ -->
   <section class="hero">
     <div class="hero__bg">
-      <img src="img/hero.jpg" alt="Flame-grilled CraveHub signature burger" width="1920" height="1088" fetchpriority="high">
+      <img src="img/hero.jpg" alt="Flame-grilled CraveHub signature burger" width="1600" height="907" fetchpriority="high">
     </div>
     <span class="hero__glow" aria-hidden="true"></span>
     <div class="container">
@@ -73,14 +74,14 @@
         <p class="sec-sub">Seven signature categories, one obsession — flavour that people remember.</p>
       </div>
       <div class="grid grid-4">
-        <a class="card cat-card reveal" href="menu.html"><span class="cat-card__img"><img src="img/burger.jpg" alt="Burgers" loading="lazy" width="768" height="768"></span><h3>Burgers</h3><small>12 varieties</small></a>
-        <a class="card cat-card reveal" data-delay="1" href="menu.html"><span class="cat-card__img"><img src="img/pizza.jpg" alt="Pizza" loading="lazy" width="768" height="768"></span><h3>Pizza</h3><small>Stone-baked</small></a>
-        <a class="card cat-card reveal" data-delay="2" href="menu.html"><span class="cat-card__img"><img src="img/chicken.jpg" alt="Chicken" loading="lazy" width="768" height="768"></span><h3>Chicken</h3><small>Crispy & grilled</small></a>
-        <a class="card cat-card reveal" data-delay="3" href="menu.html"><span class="cat-card__img"><img src="img/fries.jpg" alt="Fries" loading="lazy" width="768" height="768"></span><h3>Fries</h3><small>Loaded options</small></a>
-        <a class="card cat-card reveal" href="menu.html"><span class="cat-card__img"><img src="img/wrap.jpg" alt="Wraps" loading="lazy" width="768" height="768"></span><h3>Wraps</h3><small>On-the-go</small></a>
-        <a class="card cat-card reveal" data-delay="1" href="menu.html"><span class="cat-card__img"><img src="img/dessert.jpg" alt="Desserts" loading="lazy" width="768" height="768"></span><h3>Desserts</h3><small>Freshly baked</small></a>
-        <a class="card cat-card reveal" data-delay="2" href="menu.html"><span class="cat-card__img"><img src="img/drink.jpg" alt="Cold drinks" loading="lazy" width="768" height="768"></span><h3>Cold Drinks</h3><small>Ice-cold</small></a>
-        <a class="card cat-card reveal" data-delay="3" href="deals.html"><span class="cat-card__img"><img src="img/store.jpg" alt="Combo deals" loading="lazy" width="1536" height="1024"></span><h3>Combos</h3><small>Save up to 35%</small></a>
+        <a class="card cat-card reveal" href="menu.html"><span class="cat-card__img"><img src="img/burger.jpg" alt="Burgers" loading="lazy" decoding="async" width="640" height="640"></span><h3>Burgers</h3><small>12 varieties</small></a>
+        <a class="card cat-card reveal" data-delay="1" href="menu.html"><span class="cat-card__img"><img src="img/pizza.jpg" alt="Pizza" loading="lazy" decoding="async" width="640" height="640"></span><h3>Pizza</h3><small>Stone-baked</small></a>
+        <a class="card cat-card reveal" data-delay="2" href="menu.html"><span class="cat-card__img"><img src="img/chicken.jpg" alt="Chicken" loading="lazy" decoding="async" width="640" height="640"></span><h3>Chicken</h3><small>Crispy & grilled</small></a>
+        <a class="card cat-card reveal" data-delay="3" href="menu.html"><span class="cat-card__img"><img src="img/fries.jpg" alt="Fries" loading="lazy" decoding="async" width="640" height="640"></span><h3>Fries</h3><small>Loaded options</small></a>
+        <a class="card cat-card reveal" href="menu.html"><span class="cat-card__img"><img src="img/wrap.jpg" alt="Wraps" loading="lazy" decoding="async" width="640" height="640"></span><h3>Wraps</h3><small>On-the-go</small></a>
+        <a class="card cat-card reveal" data-delay="1" href="menu.html"><span class="cat-card__img"><img src="img/dessert.jpg" alt="Desserts" loading="lazy" decoding="async" width="640" height="640"></span><h3>Desserts</h3><small>Freshly baked</small></a>
+        <a class="card cat-card reveal" data-delay="2" href="menu.html"><span class="cat-card__img"><img src="img/drink.jpg" alt="Cold drinks" loading="lazy" decoding="async" width="640" height="640"></span><h3>Cold Drinks</h3><small>Ice-cold</small></a>
+        <a class="card cat-card reveal" data-delay="3" href="deals.html"><span class="cat-card__img"><img src="img/store.jpg" alt="Combo deals" loading="lazy" decoding="async" width="1200" height="800"></span><h3>Combos</h3><small>Save up to 35%</small></a>
       </div>
     </div>
   </section>
@@ -114,7 +115,7 @@
             <a class="btn btn--ghost" href="deals.html">All offers</a>
           </div>
         </div>
-        <div class="phone-mock"><img src="img/burger.jpg" alt="Signature stack burger combo" loading="lazy" width="768" height="768"></div>
+        <div class="phone-mock"><img src="img/burger.jpg" alt="Signature stack burger combo" loading="lazy" decoding="async" width="640" height="640"></div>
       </div>
     </div>
   </section>
@@ -195,13 +196,13 @@
     <div class="container">
       <div class="sec-head reveal"><span class="eyebrow">Food gallery</span><h2>Straight from the grill</h2></div>
       <div class="gallery reveal">
-        <figure data-tag="Signature Stack"><img src="img/burger.jpg" alt="Signature burger" loading="lazy" width="768" height="768"></figure>
-        <figure class="wide" data-tag="Molten Pepperoni"><img src="img/pizza.jpg" alt="Pepperoni pizza" loading="lazy" width="768" height="768"></figure>
-        <figure data-tag="Golden Crispy"><img src="img/chicken.jpg" alt="Crispy chicken" loading="lazy" width="768" height="768"></figure>
-        <figure data-tag="Loaded Fries"><img src="img/fries.jpg" alt="Loaded fries" loading="lazy" width="768" height="768"></figure>
-        <figure data-tag="Chargrilled Wrap"><img src="img/wrap.jpg" alt="Chicken wrap" loading="lazy" width="768" height="768"></figure>
-        <figure data-tag="Lava Dessert"><img src="img/dessert.jpg" alt="Lava cake" loading="lazy" width="768" height="768"></figure>
-        <figure class="wide" data-tag="Inside CraveHub"><img src="img/store.jpg" alt="CraveHub restaurant interior" loading="lazy" width="1536" height="1024"></figure>
+        <figure data-tag="Signature Stack"><img src="img/burger.jpg" alt="Signature burger" loading="lazy" decoding="async" width="640" height="640"></figure>
+        <figure class="wide" data-tag="Molten Pepperoni"><img src="img/pizza.jpg" alt="Pepperoni pizza" loading="lazy" decoding="async" width="640" height="640"></figure>
+        <figure data-tag="Golden Crispy"><img src="img/chicken.jpg" alt="Crispy chicken" loading="lazy" decoding="async" width="640" height="640"></figure>
+        <figure data-tag="Loaded Fries"><img src="img/fries.jpg" alt="Loaded fries" loading="lazy" decoding="async" width="640" height="640"></figure>
+        <figure data-tag="Chargrilled Wrap"><img src="img/wrap.jpg" alt="Chicken wrap" loading="lazy" decoding="async" width="640" height="640"></figure>
+        <figure data-tag="Lava Dessert"><img src="img/dessert.jpg" alt="Lava cake" loading="lazy" decoding="async" width="640" height="640"></figure>
+        <figure class="wide" data-tag="Inside CraveHub"><img src="img/store.jpg" alt="CraveHub restaurant interior" loading="lazy" decoding="async" width="1200" height="800"></figure>
       </div>
     </div>
   </section>
@@ -220,7 +221,7 @@
           </div>
           <p class="form-note" style="margin-top:16px">4.9★ · 180,000+ ratings</p>
         </div>
-        <div class="phone-mock"><img src="img/store.jpg" alt="CraveHub app preview" loading="lazy" width="1536" height="1024"></div>
+        <div class="phone-mock"><img src="img/store.jpg" alt="CraveHub app preview" loading="lazy" decoding="async" width="1200" height="800"></div>
       </div>
     </div>
   </section>
@@ -259,6 +260,6 @@
   <div class="modal__box" id="quick-body" style="position:relative"></div>
   <button class="icon-btn modal__close" data-close-modal aria-label="Close">✕</button>
 </div>
-<script src="script.js"></script>
+<script src="script.js" defer></script>
 </body>
 </html>
