@@ -637,6 +637,3 @@ html[data-theme="dark"] .map { background: linear-gradient(120deg, #232323, #191
 /* Media boxes get their own layer so hover zooms never repaint neighbours. */
 .food-card__media, .cat-card__img { contain: paint; }
 .food-card__media img, .cat-card__img img { backface-visibility: hidden; }
-/* Smooth in-page anchor scrolling without JS. */
-html { scroll-behavior: smooth; }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
