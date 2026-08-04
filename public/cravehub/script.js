@@ -561,10 +561,10 @@
     buildShell();
     initTheme();
     initLoader();
-    initStickyNav();
+    initScrollUi();
     initMobileMenu();
-    initBackToTop();
     initRipple();
+    initPrefetch();
     initCart();
     initFeatured();
     initMenuPage();
