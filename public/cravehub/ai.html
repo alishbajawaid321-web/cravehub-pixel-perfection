@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CraveBot AI Meal Recommendation | CraveHub</title>
+<meta name="description" content="Answer five quick questions and CraveBot, the CraveHub AI meal matcher, recommends a personalised meal with the reasoning behind every pick.">
+<meta name="theme-color" content="#FF6B00">
+<meta property="og:title" content="CraveBot — AI Meal Recommendation by CraveHub">
+<meta property="og:description" content="Tell CraveBot your protein, spice, budget and hunger level and get a meal matched to you in seconds.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="loader" id="loader"><div style="display:grid;place-items:center"><img class="loader__logo" src="img/logo.png" alt="CraveHub" width="76" height="76"><div class="loader__bar"><i></i></div><p class="loader__txt">Booting CraveBot</p></div></div>
+
+<header id="site-header"></header>
+
+<main id="main">
+  <section class="ai-hero">
+    <span class="ai-grid-bg" aria-hidden="true"></span>
+    <span class="ai-orb" aria-hidden="true"></span>
+    <div class="container" style="position:relative;display:grid;gap:22px;justify-items:center;text-align:center">
+      <span class="bot-avatar reveal is-in">🤖</span>
+      <span class="eyebrow" style="background:rgba(255,255,255,0.12);color:#ffc107">CraveBot · AI meal matcher</span>
+      <h1>Tell me your mood.<br><span class="text-grad">I'll plate your meal.</span></h1>
+      <p style="max-width:620px;color:rgba(255,255,255,0.78)">CraveBot scores all 20 signature dishes against your protein, spice tolerance, budget and hunger level — then explains exactly why it chose your meal.</p>
+    </div>
+  </section>
+
+  <section class="section" style="margin-top:-60px">
+    <div class="container">
+      <form class="card glass ai-form reveal" id="ai-form">
+        <div>
+          <h3>1 · What protein do you prefer?</h3>
+          <div class="opt-group" data-group="protein" style="margin-top:12px">
+            <button type="button" class="opt is-active" data-value="chicken" aria-pressed="true">🍗 Chicken</button>
+            <button type="button" class="opt" data-value="beef" aria-pressed="false">🥩 Beef</button>
+            <button type="button" class="opt" data-value="veg" aria-pressed="false">🥬 Vegetarian</button>
+            <button type="button" class="opt" data-value="any" aria-pressed="false">✨ Surprise me</button>
+          </div>
+        </div>
+
+        <div>
+          <h3>2 · How spicy should your meal be?</h3>
+          <div class="opt-group" data-group="spice" style="margin-top:12px">
+            <button type="button" class="opt" data-value="0">😌 Mild</button>
+            <button type="button" class="opt is-active" data-value="1">🙂 Medium</button>
+            <button type="button" class="opt" data-value="2">🌶️ Hot</button>
+            <button type="button" class="opt" data-value="3">🔥 Volcano</button>
+          </div>
+        </div>
+
+        <div>
+          <h3>3 · What is your budget?</h3>
+          <div class="range-row" style="margin-top:14px">
+            <label for="budget" style="position:absolute;left:-9999px">Budget</label>
+            <input type="range" id="budget" min="300" max="2500" step="50" value="1200">
+            <strong id="budget-out" class="price" style="min-width:110px;text-align:right">Rs 1,200</strong>
+          </div>
+        </div>
+
+        <div>
+          <h3>4 · How hungry are you?</h3>
+          <div class="opt-group" data-group="hunger" style="margin-top:12px">
+            <button type="button" class="opt" data-value="1">🍽️ Light bite</button>
+            <button type="button" class="opt is-active" data-value="2">😋 Proper meal</button>
+            <button type="button" class="opt" data-value="3">🤤 Absolutely starving</button>
+          </div>
+        </div>
+
+        <div>
+          <h3>5 · Would you like a drink?</h3>
+          <div class="opt-group" data-group="drink" style="margin-top:12px">
+            <button type="button" class="opt is-active" data-value="yes">🥤 Yes please</button>
+            <button type="button" class="opt" data-value="no">🚫 No drink</button>
+          </div>
+        </div>
+
+        <button class="btn btn--primary btn--block" type="submit">Find My Meal ✦</button>
+        <p class="form-note" style="text-align:center">No sign-up needed. CraveBot runs entirely in your browser.</p>
+      </form>
+
+      <div class="ai-result" id="ai-result" style="margin-top:34px" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="section section--tint">
+    <div class="container">
+      <div class="sec-head reveal"><span class="eyebrow">How it works</span><h2>Smart matching, zero guesswork</h2></div>
+      <div class="grid grid-3">
+        <article class="card feature reveal"><span class="icon-box">🎯</span><h3>Weighted scoring</h3><p>Protein match, spice distance, budget fit, portion size and guest rating each carry their own weight.</p></article>
+        <article class="card feature reveal" data-delay="1"><span class="icon-box">🧠</span><h3>Explainable picks</h3><p>Every recommendation lists the reasons behind it — no black box, no random dish.</p></article>
+        <article class="card feature reveal" data-delay="2"><span class="icon-box">⚡</span><h3>Instant results</h3><p>CraveBot ranks the entire menu in milliseconds and suggests pairings and alternates too.</p></article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+<button class="to-top" id="to-top" aria-label="Back to top">↑</button>
+<div id="toast-stack"></div>
+<script src="script.js"></script>
+</body>
+</html>

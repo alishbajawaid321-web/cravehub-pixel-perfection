@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Menu — Burgers, Pizza, Chicken & More | CraveHub</title>
+<meta name="description" content="Browse the full CraveHub menu: burgers, stone-baked pizza, crispy chicken, loaded fries, wraps, desserts and cold drinks with prices, ratings and nutrition.">
+<meta name="theme-color" content="#FF6B00">
+<meta property="og:title" content="CraveHub Menu — Premium Fast Food">
+<meta property="og:description" content="Filter and search 20+ signature dishes with prices, ratings and nutrition details.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="loader" id="loader"><div style="display:grid;place-items:center"><img class="loader__logo" src="img/logo.png" alt="CraveHub" width="76" height="76"><div class="loader__bar"><i></i></div><p class="loader__txt">Plating the menu</p></div></div>
+
+<header id="site-header"></header>
+
+<main id="main">
+  <section class="section" style="padding-top:calc(var(--nav-h) + 56px)">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow">The full menu</span>
+        <h1 style="font-size:clamp(2.1rem,4.6vw,3.4rem)">Crafted to be <span class="text-grad">craved</span></h1>
+        <p class="sec-sub">Filter by category or search by name, ingredient or craving. Prices include all taxes.</p>
+      </div>
+
+      <div class="toolbar reveal">
+        <div class="filters" role="group" aria-label="Filter by category">
+          <button class="filter is-active" data-filter="all">All</button>
+          <button class="filter" data-filter="burgers">Burgers</button>
+          <button class="filter" data-filter="pizza">Pizza</button>
+          <button class="filter" data-filter="chicken">Chicken</button>
+          <button class="filter" data-filter="fries">Fries</button>
+          <button class="filter" data-filter="wraps">Wraps</button>
+          <button class="filter" data-filter="desserts">Desserts</button>
+          <button class="filter" data-filter="drinks">Cold Drinks</button>
+        </div>
+        <div class="search-box">
+          <label for="menu-search" style="position:absolute;left:-9999px">Search the menu</label>
+          <input class="input" id="menu-search" type="search" placeholder="Search dishes, e.g. spicy chicken">
+        </div>
+      </div>
+      <p class="form-note reveal" style="margin-bottom:20px" id="result-count"></p>
+
+      <div class="grid grid-3" id="menu-grid"></div>
+    </div>
+  </section>
+
+  <!-- Nutrition information -->
+  <section class="section section--tint">
+    <div class="container">
+      <div class="sec-head reveal"><span class="eyebrow">Nutrition information</span><h2>Full transparency, every dish</h2><p class="sec-sub">Every item shows calories, spice level and protein type inside Quick View.</p></div>
+      <div class="grid grid-4">
+        <div class="card feature reveal"><span class="icon-box">📊</span><h3>Calorie labelled</h3><p>Kcal per serving verified by an independent food lab each quarter.</p></div>
+        <div class="card feature reveal" data-delay="1"><span class="icon-box">🌶️</span><h3>Spice scale 0–3</h3><p>From mild to volcano, so nobody is caught off guard.</p></div>
+        <div class="card feature reveal" data-delay="2"><span class="icon-box">🥗</span><h3>Allergen list</h3><p>Gluten, dairy, nut and egg flags available on request in-store.</p></div>
+        <div class="card feature reveal" data-delay="3"><span class="icon-box">🌱</span><h3>Plant-based</h3><p>Three fully vegetarian builds, cooked on a dedicated grill zone.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container">
+      <div class="sec-head reveal"><span class="eyebrow">FAQ</span><h2>Menu questions, answered</h2></div>
+      <div class="faq reveal">
+        <div class="faq__item"><button class="faq__q">Are your prices inclusive of tax?<i>+</i></button><div class="faq__a"><p>Yes. Every price shown includes GST and service charges. Delivery is free on orders above Rs 1,500 within a 6 km radius.</p></div></div>
+        <div class="faq__item"><button class="faq__q">Can I customise a dish?<i>+</i></button><div class="faq__a"><p>Absolutely. Add or remove sauces, cheese and spice level at checkout. Extra toppings start at Rs 90.</p></div></div>
+        <div class="faq__item"><button class="faq__q">Is the chicken halal?<i>+</i></button><div class="faq__a"><p>All CraveHub poultry and beef is certified halal and sourced from audited local suppliers.</p></div></div>
+        <div class="faq__item"><button class="faq__q">Do you cater for large groups?<i>+</i></button><div class="faq__a"><p>Yes — party platters serve 8 to 40 guests. Email contact@cravehub.pk at least 24 hours ahead.</p></div></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+<button class="to-top" id="to-top" aria-label="Back to top">↑</button>
+<div id="toast-stack"></div>
+<div class="modal" id="quick-modal" role="dialog" aria-modal="true" aria-label="Quick view">
+  <div class="modal__box" id="quick-body" style="position:relative"></div>
+  <button class="icon-btn modal__close" data-close-modal aria-label="Close">✕</button>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
