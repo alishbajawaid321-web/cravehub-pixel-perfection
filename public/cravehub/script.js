@@ -128,21 +128,45 @@
   }
 
   /* ---------- 3. Global UI behaviours ---------- */
+  /* Loader: dismissed as soon as the shell is painted — no artificial delay */
   function initLoader() {
     var loader = $("#loader");
     if (!loader) return;
-    window.addEventListener("load", function () {
-      setTimeout(function () { loader.classList.add("is-done"); }, 550);
-    });
-    setTimeout(function () { loader.classList.add("is-done"); }, 3500);
+    var done = function () { loader.classList.add("is-done"); };
+    requestAnimationFrame(done);
+    window.addEventListener("load", done);
   }
 
-  function initStickyNav() {
-    var nav = $("#nav");
-    if (!nav) return;
-    var onScroll = function () { nav.classList.toggle("is-stuck", window.scrollY > 24); };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
+  /* One rAF-throttled scroll pass drives sticky nav + back-to-top button */
+  function initScrollUi() {
+    var nav = $("#nav"), top = $("#to-top"), queued = false;
+    function paint() {
+      queued = false;
+      var y = window.scrollY;
+      if (nav) nav.classList.toggle("is-stuck", y > 24);
+      if (top) top.classList.toggle("is-visible", y > 500);
+    }
+    paint();
+    window.addEventListener("scroll", function () {
+      if (!queued) { queued = true; requestAnimationFrame(paint); }
+    }, { passive: true });
+    if (top) top.addEventListener("click", function () { window.scrollTo({ top: 0, behavior: "smooth" }); });
+  }
+
+  /* Warm up the next page on nav hover/touch so navigation feels instant */
+  function initPrefetch() {
+    var seen = {};
+    document.addEventListener("pointerenter", function (e) {
+      var a = e.target.closest && e.target.closest('a[href$=".html"]');
+      if (!a) return;
+      var href = a.getAttribute("href");
+      if (!href || seen[href]) return;
+      seen[href] = 1;
+      var link = document.createElement("link");
+      link.rel = "prefetch";
+      link.href = href;
+      document.head.appendChild(link);
+    }, true);
   }
 
   function initMobileMenu() {
