@@ -230,17 +230,10 @@
     nodes.forEach(function (n) { io.observe(n); });
   }
 
-  function initBackToTop() {
-    var btn = $("#to-top");
-    if (!btn) return;
-    window.addEventListener("scroll", function () {
-      btn.classList.toggle("is-visible", window.scrollY > 500);
-    }, { passive: true });
-    btn.addEventListener("click", function () { window.scrollTo({ top: 0, behavior: "smooth" }); });
-  }
-
+  /* Ripple fires on pointerdown so buttons react instantly to a press */
   function initRipple() {
-    document.addEventListener("click", function (e) {
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    document.addEventListener("pointerdown", function (e) {
       var btn = e.target.closest(".btn, .filter, .opt");
       if (!btn) return;
       var rect = btn.getBoundingClientRect();
@@ -252,7 +245,7 @@
       span.style.top = e.clientY - rect.top - size / 2 + "px";
       btn.appendChild(span);
       setTimeout(function () { span.remove(); }, 660);
-    });
+    }, { passive: true });
   }
 
   /* Cart counter (persisted) */
