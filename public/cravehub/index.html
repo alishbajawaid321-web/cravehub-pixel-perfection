@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CraveHub — Premium Fast Food | Every Bite Tells a Story</title>
+<meta name="description" content="CraveHub serves premium burgers, pizza, crispy chicken and more across Pakistan. Flame-grilled quality, fast delivery and an AI meal matcher built for cravings.">
+<meta name="theme-color" content="#FF6B00">
+<meta property="og:title" content="CraveHub — Every Bite Tells a Story">
+<meta property="og:description" content="Premium fast food, crafted fresh. Explore the menu, grab a deal or let CraveBot pick your perfect meal.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- Loading screen -->
+<div class="loader" id="loader">
+  <div style="display:grid;place-items:center">
+    <img class="loader__logo" src="img/logo.png" alt="CraveHub" width="76" height="76">
+    <div class="loader__bar"><i></i></div>
+    <p class="loader__txt">Firing up the grill</p>
+  </div>
+</div>
+
+<header id="site-header"></header>
+
+<main id="main">
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero__bg">
+      <img src="img/hero.jpg" alt="Flame-grilled CraveHub signature burger" width="1920" height="1088" fetchpriority="high">
+    </div>
+    <span class="hero__glow" aria-hidden="true"></span>
+    <div class="container">
+      <div class="hero__content">
+        <span class="eyebrow">★ Pakistan's premium fast food</span>
+        <h1>Every Bite <span class="text-grad">Tells a Story.</span></h1>
+        <p class="lead">Flame-grilled patties, stone-baked pizza and buttermilk chicken — crafted fresh every single order and delivered hot in under 30 minutes.</p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="menu.html">Explore the Menu →</a>
+          <a class="btn btn--glass" href="ai.html">Ask CraveBot 🤖</a>
+        </div>
+        <div class="hero__stats">
+          <div><b><span data-count="128" data-suffix="+">0</span></b><span>Stores nationwide</span></div>
+          <div><b><span data-count="2.4" data-suffix="M">0</span></b><span>Meals served</span></div>
+          <div><b><span data-count="4.9">0</span></b><span>Average rating</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-hint"><i></i>Scroll</div>
+  </section>
+
+  <!-- ============ MARQUEE ============ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>🔥 Flame-grilled daily</span><span>🚚 30-minute delivery</span><span>🥬 Farm-fresh produce</span><span>🏆 Best QSR 2025</span><span>💳 Loyalty rewards</span>
+      <span>🔥 Flame-grilled daily</span><span>🚚 30-minute delivery</span><span>🥬 Farm-fresh produce</span><span>🏆 Best QSR 2025</span><span>💳 Loyalty rewards</span>
+    </div>
+  </div>
+
+  <!-- ============ CATEGORIES ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Popular categories</span>
+        <h2>Find your craving</h2>
+        <p class="sec-sub">Seven signature categories, one obsession — flavour that people remember.</p>
+      </div>
+      <div class="grid grid-4">
+        <a class="card cat-card reveal" href="menu.html"><span class="cat-card__img"><img src="img/burger.jpg" alt="Burgers" loading="lazy" width="768" height="768"></span><h3>Burgers</h3><small>12 varieties</small></a>
+        <a class="card cat-card reveal" data-delay="1" href="menu.html"><span class="cat-card__img"><img src="img/pizza.jpg" alt="Pizza" loading="lazy" width="768" height="768"></span><h3>Pizza</h3><small>Stone-baked</small></a>
+        <a class="card cat-card reveal" data-delay="2" href="menu.html"><span class="cat-card__img"><img src="img/chicken.jpg" alt="Chicken" loading="lazy" width="768" height="768"></span><h3>Chicken</h3><small>Crispy & grilled</small></a>
+        <a class="card cat-card reveal" data-delay="3" href="menu.html"><span class="cat-card__img"><img src="img/fries.jpg" alt="Fries" loading="lazy" width="768" height="768"></span><h3>Fries</h3><small>Loaded options</small></a>
+        <a class="card cat-card reveal" href="menu.html"><span class="cat-card__img"><img src="img/wrap.jpg" alt="Wraps" loading="lazy" width="768" height="768"></span><h3>Wraps</h3><small>On-the-go</small></a>
+        <a class="card cat-card reveal" data-delay="1" href="menu.html"><span class="cat-card__img"><img src="img/dessert.jpg" alt="Desserts" loading="lazy" width="768" height="768"></span><h3>Desserts</h3><small>Freshly baked</small></a>
+        <a class="card cat-card reveal" data-delay="2" href="menu.html"><span class="cat-card__img"><img src="img/drink.jpg" alt="Cold drinks" loading="lazy" width="768" height="768"></span><h3>Cold Drinks</h3><small>Ice-cold</small></a>
+        <a class="card cat-card reveal" data-delay="3" href="deals.html"><span class="cat-card__img"><img src="img/store.jpg" alt="Combo deals" loading="lazy" width="1536" height="1024"></span><h3>Combos</h3><small>Save up to 35%</small></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURED MEALS ============ -->
+  <section class="section section--tint">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Featured meals</span>
+        <h2>Today's most craved</h2>
+        <p class="sec-sub">Hand-picked by our kitchen team, ranked by what Pakistan ordered most this week.</p>
+      </div>
+      <div class="grid grid-3" id="featured-grid"></div>
+      <div style="text-align:center;margin-top:38px" class="reveal">
+        <a class="btn btn--ghost" href="menu.html">View full menu</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TODAY'S SPECIAL ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="card app-promo reveal">
+        <div>
+          <span class="eyebrow">Today's special</span>
+          <h2>The Signature Stack, <span class="text-grad">30% off</span> until midnight</h2>
+          <p class="sec-sub">Double flame-grilled beef, aged cheddar, smoked aioli and crisp pickles on a toasted brioche bun — with fries and a drink.</p>
+          <div class="countdown" data-countdown="9" style="max-width:340px;margin-top:24px"></div>
+          <div class="store-badges">
+            <a class="btn btn--primary" href="menu.html">Claim the deal</a>
+            <a class="btn btn--ghost" href="deals.html">All offers</a>
+          </div>
+        </div>
+        <div class="phone-mock"><img src="img/burger.jpg" alt="Signature stack burger combo" loading="lazy" width="768" height="768"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CHEF'S RECOMMENDATIONS ============ -->
+  <section class="section section--tint">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Chef's picks · Trending now</span>
+        <h2>From our head chef's table</h2>
+        <p class="sec-sub">Recipes developed in our Lahore test kitchen and refined over 40+ tasting rounds.</p>
+      </div>
+      <div class="grid grid-3" id="chef-grid"></div>
+    </div>
+  </section>
+
+  <!-- ============ WHY CHOOSE ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Why choose CraveHub</span>
+        <h2>Premium isn't a price. It's a process.</h2>
+      </div>
+      <div class="grid grid-3">
+        <article class="card feature reveal"><span class="icon-box">🔥</span><h3>Flame-grilled, never steamed</h3><p>Open-flame grills at 280°C lock in juice and give every patty its signature char.</p></article>
+        <article class="card feature reveal" data-delay="1"><span class="icon-box">🥬</span><h3>Farm-fresh daily</h3><p>Produce arrives every morning from partner farms — nothing sits longer than 24 hours.</p></article>
+        <article class="card feature reveal" data-delay="2"><span class="icon-box">⏱️</span><h3>30-minute promise</h3><p>Live kitchen routing gets your order to your door hot, or your delivery is free.</p></article>
+        <article class="card feature reveal"><span class="icon-box">🧪</span><h3>Lab-tested quality</h3><p>ISO-22000 aligned kitchens with daily HACCP checks in every single branch.</p></article>
+        <article class="card feature reveal" data-delay="1"><span class="icon-box">🌱</span><h3>Healthy choices</h3><p>Grilled, baked and plant-based options with full nutrition transparency.</p></article>
+        <article class="card feature reveal" data-delay="2"><span class="icon-box">💳</span><h3>Rewards that stack</h3><p>Earn 1 CravePoint per Rs 100 — redeem for free meals, not vague discounts.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STATS ============ -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="sec-head reveal"><span class="eyebrow">By the numbers</span><h2 style="color:#fff">Growing with every craving</h2></div>
+      <div class="grid grid-4">
+        <div class="stat reveal"><b><span data-count="128" data-suffix="+">0</span></b><span>Stores nationwide</span></div>
+        <div class="stat reveal" data-delay="1"><b><span data-count="2400000">0</span></b><span>Meals served</span></div>
+        <div class="stat reveal" data-delay="2"><b><span data-count="98" data-suffix="%">0</span></b><span>On-time delivery</span></div>
+        <div class="stat reveal" data-delay="3"><b><span data-count="1850" data-suffix="+">0</span></b><span>Team members</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HEALTHY CHOICES ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Healthy choices</span>
+        <h2>Lighter, without losing the story</h2>
+        <p class="sec-sub">Grilled proteins, baked sides and plant-forward builds — each under 550 kcal.</p>
+      </div>
+      <div class="grid grid-3" id="healthy-grid"></div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="section section--tint">
+    <div class="container">
+      <div class="sec-head reveal"><span class="eyebrow">Customer reviews</span><h2>Loved by 2.4 million guests</h2></div>
+      <div class="slider reveal" id="testimonials">
+        <div class="slider__track">
+          <div class="slide"><blockquote class="glass quote"><span class="avatar">AK</span><p>“The Signature Burger genuinely tastes like a Rs 3,000 restaurant burger. I've stopped ordering anywhere else in Gulberg.”</p><footer><strong>Ayesha Khan</strong><small>Lahore · Verified order</small></footer></blockquote></div>
+          <div class="slide"><blockquote class="glass quote"><span class="avatar">BS</span><p>“Delivery hit my desk in 22 minutes and the fries were still crisp. Whatever their logistics team is doing, it works.”</p><footer><strong>Bilal Sheikh</strong><small>Karachi · Verified order</small></footer></blockquote></div>
+          <div class="slide"><blockquote class="glass quote"><span class="avatar">MF</span><p>“CraveBot picked the Nashville Hot Wings for me and it was a perfect read. Genuinely useful, not a gimmick.”</p><footer><strong>Maryam Farooq</strong><small>Islamabad · Verified order</small></footer></blockquote></div>
+          <div class="slide"><blockquote class="glass quote"><span class="avatar">HR</span><p>“Family Feast Friday has become a ritual at home. Four people, one box, zero complaints from the kids.”</p><footer><strong>Hamza Raza</strong><small>Lahore · Loyalty member</small></footer></blockquote></div>
+        </div>
+      </div>
+      <div class="slider__nav" id="slider-dots"></div>
+    </div>
+  </section>
+
+  <!-- ============ GALLERY ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="sec-head reveal"><span class="eyebrow">Food gallery</span><h2>Straight from the grill</h2></div>
+      <div class="gallery reveal">
+        <figure data-tag="Signature Stack"><img src="img/burger.jpg" alt="Signature burger" loading="lazy" width="768" height="768"></figure>
+        <figure class="wide" data-tag="Molten Pepperoni"><img src="img/pizza.jpg" alt="Pepperoni pizza" loading="lazy" width="768" height="768"></figure>
+        <figure data-tag="Golden Crispy"><img src="img/chicken.jpg" alt="Crispy chicken" loading="lazy" width="768" height="768"></figure>
+        <figure data-tag="Loaded Fries"><img src="img/fries.jpg" alt="Loaded fries" loading="lazy" width="768" height="768"></figure>
+        <figure data-tag="Chargrilled Wrap"><img src="img/wrap.jpg" alt="Chicken wrap" loading="lazy" width="768" height="768"></figure>
+        <figure data-tag="Lava Dessert"><img src="img/dessert.jpg" alt="Lava cake" loading="lazy" width="768" height="768"></figure>
+        <figure class="wide" data-tag="Inside CraveHub"><img src="img/store.jpg" alt="CraveHub restaurant interior" loading="lazy" width="1536" height="1024"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ APP PROMO ============ -->
+  <section class="section section--tint">
+    <div class="container">
+      <div class="glass app-promo reveal">
+        <div>
+          <span class="eyebrow">Mobile app</span>
+          <h2>Order in three taps. Track to the door.</h2>
+          <p class="sec-sub">Live rider tracking, saved favourites, exclusive in-app pricing and CravePoints that never expire.</p>
+          <div class="store-badges">
+            <a class="btn btn--dark" href="#newsletter">  App Store</a>
+            <a class="btn btn--dark" href="#newsletter">▶ Google Play</a>
+          </div>
+          <p class="form-note" style="margin-top:16px">4.9★ · 180,000+ ratings</p>
+        </div>
+        <div class="phone-mock"><img src="img/store.jpg" alt="CraveHub app preview" loading="lazy" width="1536" height="1024"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DELIVERY + REWARDS ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-3">
+        <article class="card feature reveal"><span class="icon-box">🚚</span><h3>Delivery information</h3><p>Free delivery over Rs 1,500 within 6 km. Live tracking from grill to gate, 10:30 AM – 11:30 PM daily.</p></article>
+        <article class="card feature reveal" data-delay="1"><span class="icon-box">🎁</span><h3>Loyalty rewards</h3><p>Three tiers — Crave, Crave+ and Crave Black. Free birthday meal at every tier.</p></article>
+        <article class="card feature reveal" data-delay="2"><span class="icon-box">💳</span><h3>Gift cards</h3><p>Digital cards from Rs 1,000 to Rs 25,000, delivered instantly with a custom message.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NEWSLETTER ============ -->
+  <section class="section" id="newsletter">
+    <div class="container">
+      <div class="cta-band reveal">
+        <h2>Get first access to new drops</h2>
+        <p>Join 240,000 subscribers for secret menu launches, student offers and city-only specials.</p>
+        <form class="newsletter-form" style="max-width:480px;margin-inline:auto" novalidate>
+          <label class="visually-hidden" for="nl-home" style="position:absolute;left:-9999px">Email address</label>
+          <input class="input" id="nl-home" type="email" placeholder="you@example.com" required>
+          <button class="btn btn--dark" type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+<button class="to-top" id="to-top" aria-label="Back to top">↑</button>
+<div id="toast-stack"></div>
+<div class="modal" id="quick-modal" role="dialog" aria-modal="true" aria-label="Quick view">
+  <div class="modal__box" id="quick-body" style="position:relative"></div>
+  <button class="icon-btn modal__close" data-close-modal aria-label="Close">✕</button>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
