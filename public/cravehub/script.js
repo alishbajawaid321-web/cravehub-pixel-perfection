@@ -745,6 +745,8 @@
     initAiPage();
     initCountdowns();
     initContactForm();
+    initCheckoutHandoff();
+
     initNewsletters();
     initFaq();
     initSlider();
