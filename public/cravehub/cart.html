@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Cart — Review Your CraveHub Order</title>
+<meta name="description" content="Review your CraveHub order: adjust quantities, remove items, see subtotals and your order total before checkout.">
+<meta name="theme-color" content="#FF6B00">
+<meta property="og:title" content="Your CraveHub Cart">
+<meta property="og:description" content="Adjust quantities, remove items and review your CraveHub order total.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header id="site-header"></header>
+
+<main id="main">
+  <section class="section" style="padding-top:calc(var(--nav-h) + 56px)">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Your cart</span>
+        <h1 style="font-size:clamp(2.1rem,4.6vw,3.4rem)">Ready when <span class="text-grad">you are</span></h1>
+        <p class="sec-sub">Adjust quantities, remove items or keep browsing — your cart is saved on this device.</p>
+      </div>
+      <div id="cart-root"></div>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+<button class="to-top" id="to-top" aria-label="Back to top">↑</button>
+<div id="toast-stack"></div>
+<script src="script.js" defer></script>
+</body>
+</html>
