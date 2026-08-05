@@ -442,9 +442,8 @@
       if (first) setTimeout(function () { first.focus({ preventScroll: true }); }, reduce ? 0 : 600);
       if (pending) toast("Order details added — just confirm and send.", true);
     });
-
-    });
   }
+
 
 
   /* Accordions & sliders (shared) */
