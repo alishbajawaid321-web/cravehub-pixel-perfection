@@ -87,7 +87,7 @@
             '<div class="nav__tools">' +
               '<button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>' +
               '<button class="icon-btn" id="cart-btn" aria-label="View cart">🛒<span class="cart-count" id="cart-count">0</span></button>' +
-              '<a class="btn btn--primary btn--sm" href="menu.html">Order Now</a>' +
+              '<a class="btn btn--primary btn--sm" href="contact.html">Order Now</a>' +
               '<button class="icon-btn burger" id="burger" aria-label="Open menu" aria-expanded="false">☰</button>' +
             "</div>" +
           "</div>" +
@@ -437,7 +437,7 @@
           '<div class="food-card__top"><h3>' + esc(item.name) + '</h3><span class="price">' + money(item.price) + "</span></div>" +
           '<div class="stars">' + stars(item.rating) + "<span>" + item.rating.toFixed(1) + " (" + item.reviews + ")</span></div>" +
           '<p class="food-card__desc">' + esc(item.desc) + "</p>" +
-          '<button class="btn btn--primary btn--sm btn--block" data-add="' + esc(item.name) + '">Add to Cart</button>' +
+          '<button class="btn btn--primary btn--sm btn--block" data-id="' + item.id + '" data-add="' + esc(item.name) + '">Add to Cart</button>' +
         "</div>" +
       "</article>"
     );
@@ -501,7 +501,7 @@
           "<p style=\"color:var(--text-soft);font-size:0.93rem\">" + esc(item.desc) + "</p>" +
           '<div class="nutri"><span>' + item.kcal + " kcal</span><span>Spice " + item.spicy + "/3</span><span>" + item.protein + "</span></div>" +
           '<div class="food-card__top"><span class="price" style="font-size:1.5rem">' + money(item.price) + "</span></div>" +
-          '<button class="btn btn--primary btn--block" data-add="' + esc(item.name) + '">Add to Cart</button>' +
+          '<button class="btn btn--primary btn--block" data-id="' + item.id + '" data-add="' + esc(item.name) + '">Add to Cart</button>' +
         "</div>";
       modal.classList.add("is-open");
     }
@@ -586,7 +586,7 @@
             '<ul class="reason-list">' + best.why.slice(0, 4).map(function (w) { return "<li>" + esc(w) + "</li>"; }).join("") + "</ul>" +
             (drink ? '<p class="form-note">Paired drink: <strong>' + esc(drink.name) + "</strong> (" + money(drink.price) + ")</p>" : "") +
             '<p class="form-note">Also worth trying: ' + sides.map(function (s) { return esc(s.name); }).join(" · ") + "</p>" +
-            '<div class="food-card__top"><span class="price" style="font-size:1.6rem">' + money(total) + '</span><button class="btn btn--primary" data-add="' + esc(best.item.name) + '">Add meal to cart</button></div>' +
+            '<div class="food-card__top"><span class="price" style="font-size:1.6rem">' + money(total) + '</span><button class="btn btn--primary" data-id="' + best.item.id + '" data-add="' + esc(best.item.name) + '">Add meal to cart</button></div>' +
           "</div>" +
         "</div>";
       out.classList.add("is-visible");
