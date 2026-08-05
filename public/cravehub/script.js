@@ -380,9 +380,70 @@
       }
 
       if (e.target.closest("#cart-clear")) { cartSave([]); toast("Cart cleared"); return; }
-      if (e.target.closest("#cart-checkout")) { toast("Checkout functionality coming soon.", true); }
+      if (e.target.closest("#cart-checkout")) { checkout(); }
     });
   }
+
+  /* Checkout: hand the order over to the Contact page form. */
+  var ORDER_KEY = "cravehub_pending_order";
+
+  function orderSummaryText() {
+    var lines = cartGet();
+    var sub = cartTotal();
+    var delivery = sub >= 1500 ? 0 : 149;
+    var body = ["Hi CraveHub team, I'd like to place this order:", ""];
+    lines.forEach(function (l) {
+      var qty = parseInt(l.qty, 10) || 0;
+      body.push("• " + qty + " × " + l.name + " — " + money((l.price || 0) * qty));
+    });
+    body.push("");
+    body.push("Subtotal: " + money(sub));
+    body.push("Delivery: " + (delivery ? money(delivery) : "Free"));
+    body.push("Order total: " + money(sub + delivery));
+    body.push("");
+    body.push("Preferred delivery address / time: ");
+    return body.join("\n");
+  }
+
+  function checkout() {
+    if (!cartCount()) { toast("Your cart is empty — add something delicious first."); return; }
+    try { sessionStorage.setItem(ORDER_KEY, orderSummaryText()); } catch (err) { /* storage blocked */ }
+    toast("Taking you to checkout details…", true);
+    location.href = "contact.html#contact-form";
+  }
+
+  /* On the Contact page: prefill the order, scroll to the form, focus it. */
+  function initCheckoutHandoff() {
+    var form = $("#contact-form");
+    if (!form) return;
+
+    var pending = "";
+    try { pending = sessionStorage.getItem(ORDER_KEY) || ""; } catch (err) { pending = ""; }
+    var wantsForm = pending || location.hash === "#contact-form";
+    if (!wantsForm) return;
+
+    if (pending) {
+      try { sessionStorage.removeItem(ORDER_KEY); } catch (err) { /* noop */ }
+      var msg = $("#cf-msg"), topic = $("#cf-topic");
+      if (msg && !msg.value.trim()) msg.value = pending;
+      if (topic) {
+        for (var i = 0; i < topic.options.length; i++) {
+          if (/order/i.test(topic.options[i].text)) { topic.selectedIndex = i; break; }
+        }
+      }
+    }
+
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    requestAnimationFrame(function () {
+      var navH = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--nav-h"), 10) || 76;
+      var top = form.getBoundingClientRect().top + window.pageYOffset - navH - 20;
+      window.scrollTo({ top: Math.max(top, 0), behavior: reduce ? "auto" : "smooth" });
+      var first = $("#cf-name");
+      if (first) setTimeout(function () { first.focus({ preventScroll: true }); }, reduce ? 0 : 600);
+      if (pending) toast("Order details added — just confirm and send.", true);
+    });
+  }
+
 
 
   /* Accordions & sliders (shared) */
@@ -683,6 +744,8 @@
     initAiPage();
     initCountdowns();
     initContactForm();
+    initCheckoutHandoff();
+
     initNewsletters();
     initFaq();
     initSlider();
