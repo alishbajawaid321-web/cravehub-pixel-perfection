@@ -248,31 +248,142 @@
     }, { passive: true });
   }
 
-  /* Cart counter (persisted) */
-  function cartCount() { return parseInt(localStorage.getItem("ch-cart") || "0", 10); }
-  function renderCart() {
-    var el = $("#cart-count");
-    if (el) el.textContent = String(cartCount());
+  /* ---------- 3b. Shopping cart (localStorage) ---------- */
+  var CART_KEY = "ch-cart-v2";
+
+  function cartGet() {
+    try {
+      var raw = JSON.parse(localStorage.getItem(CART_KEY) || "[]");
+      return Array.isArray(raw) ? raw.filter(function (l) { return l && l.name; }) : [];
+    } catch (err) { return []; }
   }
-  function addToCart(name) {
-    localStorage.setItem("ch-cart", String(cartCount() + 1));
-    renderCart();
+  function cartSave(lines) {
+    localStorage.setItem(CART_KEY, JSON.stringify(lines));
+    renderCartBadge();
+    renderCartPage();
+  }
+  function cartCount() {
+    return cartGet().reduce(function (n, l) { return n + (parseInt(l.qty, 10) || 0); }, 0);
+  }
+  function cartTotal() {
+    return cartGet().reduce(function (n, l) { return n + (l.price || 0) * (parseInt(l.qty, 10) || 0); }, 0);
+  }
+  function renderCartBadge() {
+    var el = $("#cart-count");
+    if (!el) return;
+    el.textContent = String(cartCount());
+  }
+  function badgePop() {
     var el = $("#cart-count");
     if (el) { el.classList.remove("pop"); void el.offsetWidth; el.classList.add("pop"); }
-    toast(name + " added to cart", true);
   }
+
+  /* Resolve a clicked [data-add] button into a cart line */
+  function lineFromButton(btn) {
+    var name = btn.getAttribute("data-add");
+    var id = btn.getAttribute("data-id");
+    var match = MENU.filter(function (m) { return m.id === id || m.name === name; })[0];
+    if (match) return { id: match.id, name: match.name, price: match.price, img: IMG + match.img };
+    var price = parseInt(btn.getAttribute("data-price") || "0", 10) || 0;
+    var img = btn.getAttribute("data-img") || (IMG + "menu/b1.jpg");
+    return { id: id || name.toLowerCase().replace(/[^a-z0-9]+/g, "-"), name: name, price: price, img: img.indexOf("/") === 0 ? img : IMG + img };
+  }
+
+  function cartAdd(line, qty) {
+    var lines = cartGet();
+    var existing = lines.filter(function (l) { return l.id === line.id; })[0];
+    if (existing) existing.qty = (parseInt(existing.qty, 10) || 0) + (qty || 1);
+    else lines.push({ id: line.id, name: line.name, price: line.price, img: line.img, qty: qty || 1 });
+    cartSave(lines);
+    badgePop();
+    toast(line.name + " added to cart", true);
+  }
+  function cartSetQty(id, delta) {
+    var lines = cartGet();
+    lines.forEach(function (l) { if (l.id === id) l.qty = (parseInt(l.qty, 10) || 1) + delta; });
+    cartSave(lines.filter(function (l) { return l.qty > 0; }));
+  }
+  function cartRemove(id) {
+    cartSave(cartGet().filter(function (l) { return l.id !== id; }));
+  }
+
+  function renderCartPage() {
+    var wrap = $("#cart-root");
+    if (!wrap) return;
+    var lines = cartGet();
+    if (!lines.length) {
+      wrap.innerHTML =
+        '<div class="empty-state reveal">' +
+          "<h3>Your cart is empty</h3>" +
+          "<p>Nothing here yet — explore the menu and add something crave-worthy.</p>" +
+          '<a class="btn btn--primary" style="margin-top:18px" href="menu.html">Browse the menu</a>' +
+        "</div>";
+      initReveal();
+      return;
+    }
+    var total = cartTotal();
+    wrap.innerHTML =
+      '<div class="cart-layout">' +
+        '<div class="cart-lines">' +
+          lines.map(function (l) {
+            return (
+              '<article class="card cart-line reveal" data-line="' + esc(l.id) + '">' +
+                '<img src="' + esc(l.img) + '" alt="' + esc(l.name) + '" loading="lazy" decoding="async" width="120" height="120">' +
+                '<div class="cart-line__info">' +
+                  "<h3>" + esc(l.name) + "</h3>" +
+                  '<span class="form-note">' + money(l.price) + " each</span>" +
+                  '<div class="qty" role="group" aria-label="Quantity for ' + esc(l.name) + '">' +
+                    '<button class="icon-btn" data-qty="-1" aria-label="Decrease quantity">−</button>' +
+                    "<b>" + l.qty + "</b>" +
+                    '<button class="icon-btn" data-qty="1" aria-label="Increase quantity">+</button>' +
+                  "</div>" +
+                "</div>" +
+                '<div class="cart-line__end">' +
+                  '<span class="price">' + money(l.price * l.qty) + "</span>" +
+                  '<button class="btn btn--ghost btn--sm" data-remove aria-label="Remove ' + esc(l.name) + '">Remove</button>' +
+                "</div>" +
+              "</article>"
+            );
+          }).join("") +
+        "</div>" +
+        '<aside class="card cart-summary reveal" data-delay="1">' +
+          "<h3>Order summary</h3>" +
+          '<div class="hours-row"><span>Items</span><b>' + cartCount() + "</b></div>" +
+          '<div class="hours-row"><span>Subtotal</span><b>' + money(total) + "</b></div>" +
+          '<div class="hours-row"><span>Delivery</span><b>' + (total >= 1500 ? "Free" : money(149)) + "</b></div>" +
+          '<div class="hours-row cart-summary__total"><span>Total</span><b>' + money(total >= 1500 ? total : total + 149) + "</b></div>" +
+          '<button class="btn btn--primary btn--block" id="cart-checkout" style="margin-top:16px">Checkout</button>' +
+          '<a class="btn btn--ghost btn--block" style="margin-top:10px" href="menu.html">Continue Shopping</a>' +
+          '<button class="btn btn--ghost btn--block" id="cart-clear" style="margin-top:10px">Clear Cart</button>' +
+        "</aside>" +
+      "</div>";
+    initReveal();
+  }
+
   function initCart() {
-    renderCart();
+    renderCartBadge();
+    renderCartPage();
+
     var btn = $("#cart-btn");
-    if (btn) btn.addEventListener("click", function () {
-      var n = cartCount();
-      toast(n ? n + " item(s) in your cart · checkout coming soon" : "Your cart is empty — explore the menu!");
-    });
+    if (btn) btn.addEventListener("click", function () { location.href = "cart.html"; });
+
     document.addEventListener("click", function (e) {
-      var b = e.target.closest("[data-add]");
-      if (b) addToCart(b.getAttribute("data-add"));
+      var add = e.target.closest("[data-add]");
+      if (add) { cartAdd(lineFromButton(add)); return; }
+
+      var line = e.target.closest("[data-line]");
+      if (line) {
+        var id = line.getAttribute("data-line");
+        var q = e.target.closest("[data-qty]");
+        if (q) { cartSetQty(id, parseInt(q.getAttribute("data-qty"), 10)); return; }
+        if (e.target.closest("[data-remove]")) { cartRemove(id); toast("Item removed from cart"); return; }
+      }
+
+      if (e.target.closest("#cart-clear")) { cartSave([]); toast("Cart cleared"); return; }
+      if (e.target.closest("#cart-checkout")) { toast("Checkout functionality coming soon.", true); }
     });
   }
+
 
   /* Accordions & sliders (shared) */
   function initFaq() {
