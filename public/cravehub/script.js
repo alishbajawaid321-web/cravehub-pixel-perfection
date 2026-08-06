@@ -692,6 +692,20 @@
     return !msg;
   }
 
+  function showOrderSuccess() {
+    var modal = document.createElement("div");
+    modal.className = "modal modal--order";
+    modal.innerHTML =
+      '<div class="modal__box"><div class="order-ok">' +
+        '<span class="order-ok__mark">✅</span>' +
+        "<h3>Order Placed Successfully!</h3>" +
+        "<p>Thank you for choosing CraveHub. Your order has been received successfully. Our team will contact you shortly to confirm your order.</p>" +
+      "</div></div>";
+    document.body.appendChild(modal);
+    requestAnimationFrame(function () { modal.classList.add("is-open"); });
+    setTimeout(function () { location.href = "index.html"; }, 2600);
+  }
+
   function initContactForm() {
     var form = $("#contact-form");
     if (!form) return;
@@ -705,8 +719,9 @@
       ok = setError(phone, phone.value.trim() && !/^[+0-9\s-]{7,}$/.test(phone.value.trim()) ? "Enter a valid phone number." : "") && ok;
       ok = setError(msg, msg.value.trim().length < 10 ? "Tell us a little more (10+ characters)." : "") && ok;
       if (!ok) { toast("Please fix the highlighted fields."); return; }
+      cartSave([]);
       form.reset();
-      toast("Thanks! Our team will reply within 24 hours.", true);
+      showOrderSuccess();
     });
   }
 
