@@ -17,8 +17,12 @@ export const Route = createFileRoute("/")({
         content: "CraveHub serves premium burgers, pizza and crispy chicken across Pakistan, with deals and an AI meal matcher.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://cravehub-pixel-perfection.lovable.app/" },
+      { property: "og:image", content: "https://cravehub-pixel-perfection.lovable.app/og-image.jpg" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://cravehub-pixel-perfection.lovable.app/og-image.jpg" },
     ],
+    links: [{ rel: "canonical", href: "https://cravehub-pixel-perfection.lovable.app/" }],
   }),
   beforeLoad: () => {
     throw redirect({ href: "/cravehub/index.html" });

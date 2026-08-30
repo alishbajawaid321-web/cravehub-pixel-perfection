@@ -79,16 +79,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "CraveHub — Premium Fast Food | Every Bite Tells a Story" },
       { name: "description", content: "CraveHub serves premium burgers, pizza and crispy chicken across Pakistan, with deals and an AI meal matcher." },
-      { name: "author", content: "Lovable" },
+      { name: "author", content: "CraveHub" },
       { property: "og:title", content: "CraveHub — Premium Fast Food | Every Bite Tells a Story" },
       { property: "og:description", content: "CraveHub serves premium burgers, pizza and crispy chicken across Pakistan, with deals and an AI meal matcher." },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "CraveHub" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "CraveHub — Premium Fast Food | Every Bite Tells a Story" },
       { name: "twitter:description", content: "CraveHub serves premium burgers, pizza and crispy chicken across Pakistan, with deals and an AI meal matcher." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/cbed31b7-493f-4998-861e-99e0b7e710dc/id-preview-c4a8738f--c597f839-b948-4d6f-9602-54495e070237.lovable.app-1785860889922.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/cbed31b7-493f-4998-861e-99e0b7e710dc/id-preview-c4a8738f--c597f839-b948-4d6f-9602-54495e070237.lovable.app-1785860889922.png" },
     ],
     links: [
       {
